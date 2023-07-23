@@ -3,3 +3,10 @@ function my_first_function() {                              //defining and namin
     str += " And this is a concatenated portion of the string!"
     document.getElementById("Button_Text").innerHTML = str; //putting the value of the variable into the HTML elementFromPoint with the "Button_Text" id
 }
+
+function divide_two_numbers(numerator, denominator) { //division function
+    return numerator/denominator
+}
+
+F = divide_two_numbers(8, 4);
+document.write(F)
