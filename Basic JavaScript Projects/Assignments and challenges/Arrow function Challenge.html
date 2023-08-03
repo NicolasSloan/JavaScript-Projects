@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body id="body" onload="myFunction()">
+        <script>
+            function myFunction() {
+                return "Hello World!";
+            }
+            document.getElementById("body").innerHTML = myFunction();
+
+            myArrowFunction = () => "This is my arrow function";
+            document.getElementById("body").innerHTML = myArrowFunction();
+        </script>
+    </body>
+</html>
