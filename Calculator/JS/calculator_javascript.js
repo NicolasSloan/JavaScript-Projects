@@ -93,7 +93,7 @@ Update_Display();
 //This section monitors button clicks
 const keys = document.querySelector('.calculator-keys');
 keys.addEventListener('click', (event) => {
-    //The targtet variable is an object that represents the element
+    //The target variable is an object that represents the element
     //that was clicked.
     const { target } = event;
     //If the element that was clicked on is not a button, exit the function.
