@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <link rel="stylesheet" href="CSS/Challenges.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <script>
+
+            //document fade in
+            document.body.classList.add('fade-out');
+            window.addEventListener('DOMContentLoaded', () => {
+                document.body.classList.remove('fade-out');
+            });
+
+            //form validation
+            function validateForm() {
+                let x = document.forms["myForm"]["fname"].value;
+                if (x == "") {
+                    alert("Name must be filled out");
+                    return false;
+                }
+            }
+
+
+            //popup form
+            function openForm() {
+                document.getElementById("popupForm").style.display = "block";
+            }
+
+            function closeForm() {
+                document.getElementById("popupForm").style.display = "none";
+            }
+        </script>
+        <p>Hello world!</p>
+
+        <!--form validation-->
+        <form action="" name="myForm" onsubmit="return validateForm()">
+            <input type="text" name="fname" id="fname" placeholder="First Name"><br>
+            <input type="text" name="lname" id="lname" placeholder="Last Name"><br>
+            <input type="text" name="phoneNum" id="phoneNum" placeholder="Phone Number"><br>
+            <input type="submit">
+        </form>
+
+
+        <!-- Popup Form -->
+        <button class="open-button" onclick="openForm()">Open Form</button>
+
+        <div class="form-popup" id="popupForm">
+            <form action="" class="form-container">
+                <h1>Login</h1>
+
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="email" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+
+                <button type="submit" class="btn">Login</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+        </div>
+
+
+        <!--automatic slideshow-->
+        <div id="slideshow">
+            <div>
+                <img src="https://hips.hearstapps.com/hmg-prod/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=0.752xw:1.00xh;0.175xw,0&resize=1200:*" width="240px" height="240px" alt="">
+            </div>
+            <div>
+                <img src="https://i.natgeofe.com/n/4f5aaece-3300-41a4-b2a8-ed2708a0a27c/domestic-dog_thumb_16x9.jpg?w=1200" width="240px" height="240px" alt="">
+            </div>
+            <div>
+                Pretty cool stuffs
+            </div>
+        </div>
+
+        <script>
+            $("#slideshow > div:gt(0)").hide();
+
+            setInterval(function() {
+                $('#slideshow > div:first')
+                .fadeOut (1000)
+                .next() 
+                .fadeIn(1000)
+                .end() 
+                .appendTo('#slideshow');
+            }, 3000);
+        </script>
+    </body>
+</html>
